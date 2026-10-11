@@ -1214,8 +1214,31 @@ a {
 
 
     .nav-links {
-        display: none;
-    }
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
 
 
     .nav-button {
@@ -1399,20 +1422,79 @@ a:focus-visible {
 }
 
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
+/* ========================================
+   PHONE
+   0px – 767px
+   ======================================== */
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 767px) {
 
-    html {
-        scroll-behavior: auto;
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        right: 20px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px;
+
+        background: rgba(20, 60, 67, 0.96);
+        backdrop-filter: blur(16px);
+
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 18px;
+
+        z-index: 1000;
     }
 
-    *,
-    *::before,
-    *::after {
-        transition: none !important;
+    .nav-links a {
+        padding: 16px;
+        font-size: 17px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+}
+/* ========================================
+   TABLET / LAPTOP
+   768px – 1199px
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .nav-links {
+        gap: 28px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+}
+
+/* ========================================
+   LARGE SCREENS
+   1200px+
+   ======================================== */
+
+@media (min-width: 1200px) {
+
+    .nav-links {
+        gap: 42px;
+    }
+
+    .nav-links a {
+        font-size: 17px;
     }
 
 }
