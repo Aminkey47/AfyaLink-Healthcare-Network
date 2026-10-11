@@ -1,0 +1,1418 @@
+/* =========================================
+   AFYALINK HEALTHCARE NETWORK
+   Main stylesheet
+========================================= */
+
+
+/* =========================================
+   GOOGLE FONTS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root {
+
+    --deep-teal: #17343b;
+    --dark-teal: #244850;
+    --medium-teal: #355861;
+
+    --mint: #b9e8d9;
+    --mint-light: #d8f3eb;
+
+    --white: #ffffff;
+    --off-white: #f7f8f5;
+
+    --text-dark: #17343b;
+    --text-muted: #66777b;
+
+    --border-light: rgba(23, 52, 59, 0.12);
+
+    --radius-small: 12px;
+    --radius-medium: 20px;
+    --radius-large: 28px;
+
+    --container-width: 1320px;
+
+    --sans: 'DM Sans', sans-serif;
+    --serif: 'Playfair Display', Georgia, serif;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: var(--sans);
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   GLOBAL CONTAINER
+========================================= */
+
+.container {
+    width: min(
+        calc(100% - 68px),
+        var(--container-width)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+
+    color: var(--white);
+}
+
+
+.nav-container {
+    width: min(
+        calc(100% - 68px),
+        1650px
+    );
+
+    margin: 0 auto;
+
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* Brand */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+
+.brand:hover {
+    opacity: 0.85;
+}
+
+
+.brand-logo {
+    width: 190px;
+    height: auto;
+    display: block;
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+
+    margin-left: auto;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    opacity: 0.92;
+
+    transition: var(--transition);
+}
+
+
+.nav-links a::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--mint);
+
+    transition: width var(--transition);
+}
+
+
+.nav-links a:hover {
+    color: var(--mint);
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* Find care */
+
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    background: var(--white);
+    color: var(--deep-teal);
+
+    padding: 13px 25px;
+
+    border-radius: 999px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+
+.nav-button span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    background: var(--mint-light);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 880px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-image: url('../Images/afyalink-hero.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(17, 53, 61, 0.92) 0%,
+            rgba(17, 53, 61, 0.77) 35%,
+            rgba(17, 53, 61, 0.36) 70%,
+            rgba(17, 53, 61, 0.16) 100%
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(
+        calc(100% - 68px),
+        1650px
+    );
+
+    margin: 120px auto 0;
+}
+
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 10px 22px;
+
+    border: 1px solid rgba(216, 243, 235, 0.32);
+
+    border-radius: 999px;
+
+    color: var(--mint-light);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+.eyebrow-dot {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: var(--mint);
+}
+
+
+.hero h1 {
+    max-width: 800px;
+
+    margin-top: 48px;
+
+    color: var(--white);
+
+    font-size: clamp(
+        72px,
+        8vw,
+        128px
+    );
+
+    line-height: 0.93;
+
+    letter-spacing: -5px;
+
+    font-weight: 600;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: var(--mint);
+
+    font-family: var(--serif);
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    letter-spacing: -4px;
+}
+
+
+.hero-description {
+    max-width: 700px;
+
+    margin-top: 48px;
+
+    color: rgba(255, 255, 255, 0.86);
+
+    font-size: 21px;
+
+    line-height: 1.7;
+}
+
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 36px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 56px;
+
+    padding: 0 27px;
+
+    border-radius: 999px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition);
+}
+
+
+.button span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+
+.button-primary {
+    background: var(--mint);
+    color: var(--deep-teal);
+}
+
+
+.button-primary:hover {
+    background: var(--mint-light);
+}
+
+
+.button-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: var(--white);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.button-secondary:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+
+.hero-bottom-fade {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 180px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(23, 52, 59, 0.4)
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.section {
+    padding: 130px 0;
+}
+
+
+.section-heading {
+    max-width: 760px;
+}
+
+
+.section-heading.centered {
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.section-label {
+    margin-bottom: 18px;
+
+    color: var(--medium-teal);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2,
+.hospital-heading h2,
+.cta h2 {
+    font-size: clamp(46px, 6vw, 78px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    font-weight: 600;
+}
+
+
+.section-heading h2 span,
+.hospital-heading h2 span,
+.cta h2 span {
+    font-family: var(--serif);
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+
+.section-heading > p {
+    max-width: 670px;
+
+    margin-top: 28px;
+
+    color: var(--text-muted);
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+    background: var(--off-white);
+}
+
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 100px;
+
+    margin-top: 90px;
+
+    align-items: start;
+}
+
+
+.about-main {
+    max-width: 700px;
+}
+
+
+.about-main .large-text {
+    margin-bottom: 25px;
+
+    color: var(--deep-teal);
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+}
+
+
+.about-main > p:last-child {
+    color: var(--text-muted);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+.about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.info-card {
+    padding: 32px;
+
+    border: 1px solid var(--border-light);
+
+    border-radius: var(--radius-medium);
+
+    background: var(--white);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.info-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 50px rgba(23, 52, 59, 0.08);
+}
+
+
+.card-number {
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: #94b9b0;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.info-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 24px;
+}
+
+
+.info-card p {
+    color: var(--text-muted);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   WHY AFYALINK
+========================================= */
+
+.why {
+    background: #edf2ef;
+}
+
+
+.benefits-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-top: 70px;
+}
+
+
+.benefit-card {
+    position: relative;
+
+    min-height: 350px;
+
+    padding: 38px;
+
+    border-radius: var(--radius-medium);
+
+    background: var(--white);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.benefit-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 60px rgba(23, 52, 59, 0.1);
+}
+
+
+.benefit-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 60px;
+
+    border-radius: 16px;
+
+    background: var(--mint-light);
+
+    color: var(--deep-teal);
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+.benefit-number {
+    position: absolute;
+
+    top: 40px;
+    right: 38px;
+
+    color: #b1c2bf;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.benefit-card h3 {
+    margin-bottom: 14px;
+
+    font-size: 27px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.benefit-card p {
+    color: var(--text-muted);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   HOSPITALS
+========================================= */
+
+.hospitals {
+    background: var(--off-white);
+}
+
+
+.hospital-heading {
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom: 65px;
+}
+
+
+.hospital-heading > p {
+    max-width: 420px;
+
+    color: var(--text-muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+.hospital-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.hospital-card {
+    position: relative;
+
+    min-height: 540px;
+
+    display: flex;
+    align-items: end;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-large);
+
+    background-size: cover;
+    background-position: center;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* Hospital images */
+
+.shiny-hunters {
+    background-image: url('../Images/shiny-hunters.png');
+}
+
+
+.future-pulse {
+    background-image: url('../Images/future-pulse.jpg');
+}
+
+
+.safari {
+    background-image: url('../Images/safari-hospital.png');
+}
+
+
+.hospital-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 30px 70px rgba(23, 52, 59, 0.18);
+}
+
+
+.hospital-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(15, 35, 40, 0.02) 15%,
+            rgba(15, 35, 40, 0.22) 38%,
+            rgba(15, 35, 40, 0.92) 100%
+        );
+
+    transition: background var(--transition);
+}
+
+
+.hospital-card:hover .hospital-image-overlay {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(15, 35, 40, 0.05),
+            rgba(15, 35, 40, 0.96)
+        );
+}
+
+
+.hospital-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 34px;
+}
+
+
+.hospital-tag {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--mint);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.hospital-content h3 {
+    max-width: 400px;
+
+    color: var(--white);
+
+    font-size: 34px;
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+}
+
+
+.hospital-content p {
+    margin-top: 10px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    font-size: 16px;
+}
+
+
+.hospital-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 25px;
+
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition:
+        gap var(--transition),
+        color var(--transition);
+}
+
+
+.hospital-link span {
+    color: var(--mint);
+
+    font-size: 20px;
+}
+
+
+.hospital-link:hover {
+    gap: 14px;
+
+    color: var(--mint);
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    padding-top: 30px;
+
+    background: var(--off-white);
+}
+
+
+.cta-box {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px;
+
+    border-radius: var(--radius-large);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--deep-teal),
+            var(--dark-teal)
+        );
+}
+
+
+.cta-box::after {
+    content: '';
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -160px;
+    bottom: -220px;
+
+    border-radius: 50%;
+
+    background: rgba(185, 232, 217, 0.12);
+}
+
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+
+.cta .section-label {
+    color: var(--mint);
+}
+
+
+.cta h2 {
+    color: var(--white);
+}
+
+
+.cta h2 span {
+    color: var(--mint);
+}
+
+
+.cta p {
+    max-width: 600px;
+
+    margin: 25px 0 35px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 18px;
+}
+
+
+.button-light {
+    background: var(--white);
+
+    color: var(--deep-teal);
+}
+
+
+.button-light:hover {
+    background: var(--mint-light);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 60px 0 30px;
+
+    background: var(--deep-teal);
+
+    color: var(--white);
+}
+
+
+.footer-main {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding-bottom: 50px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.footer-brand {
+    font-size: 24px;
+}
+
+
+.footer-main > p {
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 15px;
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 15px;
+
+    transition: color var(--transition);
+}
+
+
+.footer-links a:hover {
+    color: var(--mint);
+}
+
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-top: 25px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLETS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 25px;
+    }
+
+
+    .hero {
+        min-height: 800px;
+
+        background-position: 58% center;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(
+            64px,
+            10vw,
+            100px
+        );
+    }
+
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .benefit-card {
+        min-height: 280px;
+    }
+
+
+    .hospital-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hospital-card {
+        min-height: 500px;
+    }
+
+
+    .hospital-heading {
+        align-items: start;
+
+        flex-direction: column;
+    }
+
+
+    .cta-box {
+        padding: 60px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: min(
+            calc(100% - 36px),
+            var(--container-width)
+        );
+    }
+
+
+    .nav-container {
+        width: calc(100% - 36px);
+
+        min-height: 80px;
+
+        gap: 15px;
+    }
+
+
+    .brand {
+        font-size: 21px;
+
+        gap: 10px;
+    }
+
+
+    .brand-logo {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 14px;
+    }
+
+
+    .nav-links {
+        display: none;
+    }
+
+
+    .nav-button {
+        padding: 11px 17px;
+
+        font-size: 14px;
+    }
+
+
+    .hero {
+        min-height: 760px;
+
+        background-position: 62% center;
+    }
+
+
+    .hero-content {
+        width: calc(100% - 36px);
+
+        margin-top: 80px;
+    }
+
+
+    .eyebrow {
+        padding: 8px 14px;
+
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .eyebrow-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+
+    .hero h1 {
+        margin-top: 32px;
+
+        font-size: clamp(
+            56px,
+            17vw,
+            82px
+        );
+
+        letter-spacing: -3px;
+    }
+
+
+    .hero h1 span {
+        letter-spacing: -3px;
+    }
+
+
+    .hero-description {
+        max-width: 500px;
+
+        margin-top: 30px;
+
+        font-size: 17px;
+    }
+
+
+    .hero-buttons {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        max-width: 280px;
+
+        margin-top: 30px;
+    }
+
+
+    .button {
+        width: 100%;
+
+        min-height: 52px;
+    }
+
+
+    .section {
+        padding: 90px 0;
+    }
+
+
+    .section-heading h2,
+    .hospital-heading h2,
+    .cta h2 {
+        font-size: 50px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .about-grid {
+        margin-top: 55px;
+    }
+
+
+    .benefits-grid {
+        margin-top: 45px;
+    }
+
+
+    .benefit-card {
+        min-height: 300px;
+
+        padding: 30px;
+    }
+
+
+    .hospital-heading {
+        margin-bottom: 45px;
+    }
+
+
+    .hospital-card {
+        min-height: 480px;
+
+        border-radius: 22px;
+    }
+
+
+    .hospital-content {
+        padding: 28px;
+    }
+
+
+    .hospital-content h3 {
+        font-size: 30px;
+    }
+
+
+    .cta {
+        padding-top: 0;
+    }
+
+
+    .cta-box {
+        min-height: 500px;
+
+        padding: 45px 30px;
+
+        border-radius: 22px;
+    }
+
+
+    .footer-main,
+    .footer-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .footer-main {
+        gap: 25px;
+    }
+
+
+    .footer-links {
+        gap: 22px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+a:focus-visible {
+    outline: 3px solid var(--mint);
+
+    outline-offset: 5px;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+}
